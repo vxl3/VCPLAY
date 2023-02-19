@@ -2,6 +2,7 @@ FROM nikolaik/python-nodejs:python3.9-nodejs17
 RUN apt-get update \
     && apt-get install -y --no-install-recommends ffmpeg \
     && apt-get clean \
+    && npm install --global yarn \
     && rm -rf /var/lib/apt/lists/*
 COPY . /app
 WORKDIR /app
